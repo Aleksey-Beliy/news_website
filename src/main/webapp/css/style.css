@@ -1,0 +1,184 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    margin-top: 60px; /* Учитываем высоту заголовка */
+    padding: 20px;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.news-container {
+    width: 80%;
+    max-width: 1000px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.news-block {
+    margin: 20px 0;
+    background-color: #f9f9f9;
+    padding: 20px;
+    position: relative;
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.news-block:hover {
+    transform: translateY(-5px);
+}
+
+.news-block .category {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 14px;
+    z-index: 2;
+}
+
+.news-block h2 {
+    margin-top: 0;
+}
+
+.news-block img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.article-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    z-index: 3; /* Убедимся, что текст выше других элементов */
+    position: relative; /* Убедимся, что текст выше псевдоэлемента */
+}
+
+.article-content .read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Добавляем переход для цвета */
+    z-index: 3; /* Убедимся, что ссылка выше других элементов */
+    position: relative; /* Убедимся, что ссылка выше псевдоэлемента */
+}
+
+.article-content .read-more:hover {
+    color: #0056b3; /* Изменяем цвет при наведении */
+    text-decoration: underline;
+}
+
+/* Декоративные стили для блочных элементов */
+.news-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.news-block:hover::before {
+    opacity: 1;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-content div {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.footer-content div:last-child {
+    margin-right: 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+}
+
+.button {
+    background-color: green; 
+    border: none;
+    color: white;
+    padding: 10px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: darkgreen;
+}
